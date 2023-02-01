@@ -13,7 +13,7 @@ namespace Test
             string str = "Slovo";
             bool b = true;
 
-            int c = 18;
+            decimal c = 18;
             int d = 5;
             Console.WriteLine("Hello, World!");
             Console.WriteLine("Hello, World!");
@@ -28,14 +28,25 @@ namespace Test
 
             Console.Write("Multiply of numbers:");
             Console.WriteLine(c * d);
+            Console.WriteLine(c / d);
             Console.Write("Hello");
             Console.WriteLine(" World!(3)");
             Console.Write("Enter your name: ");
             string name = Console.ReadLine();
-            Console.Write("Learn and practise, ");
-            Console.Write(name);
-            Console.WriteLine(":))");
-
+            if (name == "")
+            {
+                Console.WriteLine("Empty name");
+            }
+            else if (name == " ")
+            {
+                Console.WriteLine("Empty name");
+            }
+            else
+            {
+                Console.Write("Learn and practise, ");
+                Console.Write(name);
+                Console.WriteLine(" ;)");
+            }
         }
     
     }
