@@ -13,7 +13,7 @@ namespace Test
             string str = "Slovo";
             bool b = true;
 
-            decimal c = 18;
+            double c = 18;
             int d = 5;
             Console.WriteLine("Hello, World!");
             Console.WriteLine("Hello, World!");
@@ -31,8 +31,13 @@ namespace Test
             Console.WriteLine(c / d);
             Console.Write("Hello");
             Console.WriteLine(" World!(3)");
+           
+            /*
+              Example of comments
+             */
+
             Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
+            string name = Console.ReadLine();  // вводим имя
             if (name == "")
             {
                 Console.WriteLine("Empty name");
@@ -47,6 +52,29 @@ namespace Test
                 Console.Write(name);
                 Console.WriteLine(" ;)");
             }
+
+            Console.Write("Enter your weight : ");
+            int weight = Convert.ToInt32(Console.ReadLine());
+
+            string nickname = "Tomas";
+
+            switch (nickname)
+            {
+                case "Nikita":
+                    Console.WriteLine("Your name is Nikita");
+                    break;
+                case "Tomas":
+                    Console.WriteLine("Your name is Tomas");
+                    break;
+                default:
+                    Console.WriteLine("default");
+                    break;
+            }
+
+           
+            Console.WriteLine(Math.Pow(5, 2));
+            
+
         }
     
     }
