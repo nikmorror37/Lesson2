@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Lesson6;
 using Newtonsoft.Json;
 using System;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -9,7 +11,7 @@ namespace Test
 {
     internal class Program 
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
 
@@ -333,21 +335,23 @@ namespace Test
 
             */
             //int[] numbers = { 1, 2, 3, 4, 5, 8 };
+            //foreach (int item in numbers)
+            //{
+            //    Console.WriteLine(item + " До");
+            //}
             //for (int i = 0; i < numbers.Length; i++)
             //{
             //    numbers[i] = numbers[i] * 2;
-            //    Console.WriteLine(numbers[i]);
+            //    Console.WriteLine(numbers[i] + " После");
             //}
 
-            //            string[] substr = {"HellO","Boss","King" };
-            //            foreach (string item in substr)
-            //            {
-            //                Console.WriteLine($"{item}");
-            //            }
-            //            foreach (int item in numbers)
-            //            {
-            //                Console.WriteLine($"{item}");
-            //            }
+            //string[] substr = { "HellO", "Boss", "King" };
+            //foreach (string item in substr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+
 
 
             //Двумерные массивы
@@ -407,6 +411,229 @@ namespace Test
             //    }
             //    Console.WriteLine();
             //}
+
+
+            //int[] nums = { 54, 7, -41, 2, 4, 2, 89, 33, -5, 12 };
+            //// сортировка
+            //int temp;
+            //for (int i = 0; i < nums.Length - 1; i++)
+            //{
+            //    for (int j = i + 1; j < nums.Length; j++)
+            //    {
+            //        if (nums[i] > nums[j])
+            //        {
+            //            temp = nums[i];
+            //            nums[i] = nums[j];
+            //            nums[j] = temp;
+            //        }
+            //    }
+            //}
+
+            //// вывод
+            //Console.WriteLine("Вывод отсортированного массива");
+            //for (int i = 0; i < nums.Length; i++)
+            //{
+            //    Console.WriteLine(nums[i]);
+            //}
+
+
+            //LESSON 5
+
+            //Console.WriteLine(char.Parse("h"));
+
+            //char[] letters = { 'A', 'B', 'C' };
+            //string alphabet = new string(letters);
+            //Console.WriteLine(alphabet);
+            //Console.WriteLine(alphabet.GetType());
+
+            //string s1 = "abcdefghigklmn";
+            //char ch1 = s1[4];
+            //Console.WriteLine(ch1);
+            //Console.WriteLine(s1.Length);
+            //for (int i = 0; i < s1.Length; i++)
+            //{
+            //    if (s1[i] == 'a' || s1[i] == 'd' || s1[i] == 'k')
+            //    {
+            //        continue;
+            //    }
+            //    Console.WriteLine(s1[i]);
+            //}
+
+            //через тернарную функцию
+            //for (int i = 0; i < s1.Length; i++)
+            //{
+            //    Console.Write(s1[i] != 'a' && s1[i] != 'k' && s1[i] != 'd' ? s1[i].ToString() : "");
+            //}
+
+
+            //int number = 23;
+            //string result1 = string.Format("{0:d}", number);
+            //Console.WriteLine(result1); //23
+            //string result2 = string.Format("{0:d6}", number);
+            //Console.WriteLine(result2); //000023
+
+            //double number3 = 23.05;
+            //string result3 = string.Format("{0:f}", number3);
+            //Console.WriteLine(result3);//23.05
+            //double number4 = 25.1356;
+            //string result4 = string.Format("{0:f3}", number4);
+            //Console.WriteLine(result4); //25.136
+
+            //decimal number = 0.15345m;
+            //Console.WriteLine("{0:P2}", number); //15.35%
+
+            //long number = 37529123456789;
+            //string result = string.Format("{0:+### (##) ###-###-###}", number);
+            //Console.WriteLine(result);
+
+
+            //string s1 = "Hello";
+            //string s2 = "World";
+            //string s3 = s1 + " " + s2;
+            //string s4 = string.Concat(s1, "+", s2);
+            //Console.WriteLine(s3);
+            //Console.WriteLine(s4);
+
+            //int height = 185;
+            //int weight = 78;
+            //Console.WriteLine($"Вес спортсмена составил {weight} кг при росте {height} см");
+
+            //string s1 = "Hakuna";
+            //string s2 = "MATATA";
+            //string s3 = (s1 + " " + s2);
+            //Console.WriteLine(s3);
+
+            //string s4 = "Cool";
+            //string s5 = "Place";
+            //string[] words = { s1, s2, s4, s5 };
+            //string smblBtwnWrds = "&&&";
+
+            //string s6 = string.Join(smblBtwnWrds, words);
+            //Console.WriteLine(s6);
+
+            //string stringMulti = @"abrakadabra;my
+            //nameisTomShelby;mynameis;
+            //        Gustavo;yaSabininaMama;HEHHEHEHE;
+            //    LolKek";
+            //Console.WriteLine(stringMulti);
+
+            //string s1 = "Call";
+            //string s2 = "Call";
+            //string s3 = "Duty";
+            //var result = s1.Equals(s2);//True 
+            //var result2 = s2.Equals(s3);//False 
+            //Console.WriteLine(result);
+            //Console.WriteLine(result2);
+
+            //string s1 = "hello world";
+            //char ch = 'w';
+            //int indexOfChar = s1.IndexOf(ch);
+            //Console.WriteLine(indexOfChar);//6
+
+            //string subString = "rld";
+            //int indexOfSubstring = s1.IndexOf(subString);
+            //Console.WriteLine(indexOfSubstring);//8
+
+            //string path = @"C:\Zadanie5";
+            //string[] files = Directory.GetFiles(path);
+            //for (int i = 0; i < files.Length; i++)
+            //{
+            //    if (files[i].EndsWith(".jpg"))
+            //    {
+            //        File.Delete(files[i]);
+            //    }
+            //}
+
+
+            //string text = " privet chelovek ";   ///НЕ РАБОТАЕТ, ПРОВЕРИТЬ!
+            ////text = text.Trim();
+            //char[] chars = new char[] { 'r', 'e' };
+            //text = text.Trim(chars);
+            //Console.WriteLine(text);
+
+
+            //string txt = "Google chrome";
+            ////txt = txt.Substring(2);
+            ////Console.WriteLine(txt); //ogle chrome
+            //txt = txt.Substring(0, txt.Length - 2);
+            //Console.WriteLine(txt); //Google chro
+
+
+            //var sb = new StringBuilder("Good Morning");
+            //sb.Append("!");
+            //sb.Insert(5, "sunny ");
+            //sb.Replace("Morning", "Miami");//заменяем слово
+            ///*sb.Remove(5, 5);*///удаляем с какого-то индекса и указываем длину удаления
+
+            //var s = sb.ToString();
+            //Console.WriteLine(s);
+
+
+
+            //static void Swap(ref int e1, ref int e2)
+            //{
+            //    var temp = e1;
+            //    e1 = e2;
+            //    e2 = temp;
+            //}
+
+            ////сортировка пузырьком
+            //static int[] BubbleSort(int[] array)
+            //{
+            //    var len = array.Length;
+            //    for (var i = 1; i < len; i++)
+            //    {
+            //        Console.WriteLine($"----------------------------------------------------------------");
+            //        for (var j = 0; j < len - i; j++)
+            //        {
+            //            Console.WriteLine($"Сравниваем {array[j]} > {array[j + 1]}");
+            //            if (array[j] > array[j + 1])
+            //            {
+            //                Console.WriteLine($"Так как {array[j]} > {array[j + 1]} свапаем эти значения");
+            //                Swap(ref array[j], ref array[j + 1]);
+            //            }
+            //        }
+            //    }
+
+            //    return array;
+            //}
+
+            //5 4 7 8 9 5 1 2
+            //4 5 7 8 9 5 1 2
+            //4 5 7 8 5 9 1 2
+            //4 5 7 8 5 1 2 9
+            //4 5 7 5 8 1 2 9
+            //4 5 7 5 1 2 8 9
+            //4 5 5 1 2 7 8 9
+
+
+            //Console.WriteLine("Сортировка пузырьком");
+            //Console.Write("Введите элементы массива: ");
+            //var parts = Console.ReadLine().Split(new[] { " ", ",", ";" }, StringSplitOptions.RemoveEmptyEntries);
+            //var array = new int[parts.Length];
+            //for (int i = 0; i < parts.Length; i++)
+            //{
+            //    array[i] = Convert.ToInt32(parts[i]);
+            //}
+
+            //Console.WriteLine("Отсортированный массив: {0}", string.Join(", ", BubbleSort(array)));
+
+            //Console.ReadLine();
+
+
+            ///LESSON 6
+
+            //Car car = new Car(); //init object car
+            //car.Drive();
+
+            //Console.WriteLine(car.MultiCar(210, 330));
+
+
+            Car audi = new Car("Audi", 2007, 4, "Tomas");
+            Car bmw = new Car("BMW", 2011, 6, "Mike");
+
+            audi.Drive();
+            bmw.Drive();
 
 
         }
