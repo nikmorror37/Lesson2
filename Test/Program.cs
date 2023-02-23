@@ -2,6 +2,7 @@
 using Lesson6;
 using Newtonsoft.Json;
 using System;
+using System.Reflection.Metadata;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -15,41 +16,41 @@ namespace Test
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            /*      //задание ДЗ №5
+            //задание ДЗ №5
 
-            Console.Write("Enter the color's number of rainbow: ");
+            //Console.Write("Enter the color's number of rainbow: ");
 
-            int a = Convert.ToInt32(Console.ReadLine());
+            //int a = Convert.ToInt32(Console.ReadLine());
 
-            switch (a)
-            {
-                case 1:
-                    Console.WriteLine("Red");
-                    break;
-                case 2:
-                    Console.WriteLine("Orange");
-                    break;
-                case 3:
-                    Console.WriteLine("Yellow");
-                    break;
-                case 4:
-                    Console.WriteLine("Green");
-                    break;
-                case 5:
-                    Console.WriteLine("Light Blue");
-                    break;
-                case 6:
-                    Console.WriteLine("Blue");
-                    break;
-                case 7:
-                    Console.WriteLine("Violet");
-                    break;
-                default:
-                    Console.WriteLine("Write 1-7");
-                    break;
-            }
+            //switch (a)
+            //{
+            //    case 1:
+            //        Console.WriteLine("Red");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("Orange");
+            //        break;
+            //    case 3:
+            //        Console.WriteLine("Yellow");
+            //        break;
+            //    case 4:
+            //        Console.WriteLine("Green");
+            //        break;
+            //    case 5:
+            //        Console.WriteLine("Light Blue");
+            //        break;
+            //    case 6:
+            //        Console.WriteLine("Blue");
+            //        break;
+            //    case 7:
+            //        Console.WriteLine("Violet");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Write 1-7");
+            //        break;
+            //}
 
-            */
+
 
 
             /*      //задание ДЗ №4
@@ -629,11 +630,219 @@ namespace Test
             //Console.WriteLine(car.MultiCar(210, 330));
 
 
-            Car audi = new Car("Audi", 2007, 4, "Tomas");
-            Car bmw = new Car("BMW", 2011, 6, "Mike");
+            //Car audi = new Car("Audi", 2007, 4, "Tomas");
+            //Car bmw = new Car("BMW", 2011, 6, "Mike");
 
-            audi.Drive();
-            bmw.Drive();
+            //audi.Drive();
+            //bmw.Drive();
+
+
+            // Lesson 7
+
+            //audi.Distance(120);
+            //audi.Distance(90, 3.5);
+            //bmw.Distance(1.5, 75);
+
+
+            //Передача параметров по значению
+
+            //При передаче аргументов  по значению параметр метода получает не саму переменную, а ее копию и  работает с этой копией независимо.
+
+            //int num = 12;
+
+            //void PlusOne(int example)
+            //{
+            //    example = example + 485;
+            //    Console.WriteLine($"Число в методе: {example}");
+            //}
+
+            //Console.WriteLine($"Число до метода: {num}"); ////12
+            //PlusOne(num);                                 ////497
+            //Console.WriteLine($"Число после метода: {num}"); ////12
+
+
+            //Console.WriteLine("------------------------------------------------------------------");
+
+            ////Передача параметров по ссылке
+
+            ////При передаче значений параметрам по ссылке метод получает адрес переменной в памяти. И, таким образом,
+            ////если в методе изменяется значение параметра, передаваемого по ссылке, то также изменяется и значение переменной, которая передается на его место.
+
+            //int secondNum = 12;
+
+            //void PlusOneRef(ref int example)
+            //{
+            //    example = example + 485;
+            //    Console.WriteLine($"Число в методе: {example}");
+            //}
+
+            //Console.WriteLine($"Число до метода: {secondNum}"); ////12
+            //PlusOneRef(ref secondNum);                          ////497
+            //Console.WriteLine($"Число после метода: {secondNum}"); //497
+
+            //Console.WriteLine("------------------------------------------------------------------");
+
+
+            ////Выше в качестве примера входные параметры.Но параметры могут быть также выходными. Чтобы сделать параметр выходным, перед ним ставится модификатор out:
+
+            ////В примере ниже результат возвращается не через оператор return, а через выходной параметр result.
+
+
+            //int number;
+
+            //void Sum(int first, int second, out int resultSum)
+            //{
+            //    resultSum = first + second;
+            //}
+
+            //int SumSecond(int first, int second) ////второй вариант, тот же результат
+            //{
+            //    int result = first + second;
+            //    return result;
+            //}
+
+
+            //Sum(110, 125, out number);
+
+            //Console.WriteLine(number); //235
+            //Console.WriteLine(SumSecond(110, 125));
+            //Как ис ref ключевое слово out используется как при определении метода, так и при его вызове.
+
+
+            //Car car = new Car("Toyota", 2005);
+            //car.Age = 20;
+            //car.Brand = "Honda";
+            //Console.WriteLine(car.Age);
+            //Console.WriteLine(car.Brand);
+
+
+            // Lesson 8
+
+            //Doctor doctor = new Doctor();
+            //doctor.Eat();
+
+            //var rectangle = new Rectangle { Width = 90, Height = 70 };
+            //var circle = new Circle { Radius = 100 };
+            //PrintShape(rectangle);
+            //PrintShape(circle);
+
+            //var honda = new Car1();
+            //Console.WriteLine(honda.Speed);
+            //honda.Move();
+            //honda.Stop();
+
+            //var leonardo = new Reader();
+            //leonardo.Read();
+            //leonardo.Record();
+
+            //Console.WriteLine(Operations.Pow(3, 0));
+            //Console.WriteLine(Operations.Pow(2, 9));
+            //Console.WriteLine(Operations.Abs(-234));
+
+            //WarriorStruct voin1 = new WarriorStruct();
+
+            //WarriorStruct voin2 = voin1 with { sword = "Сабля", armor = 73};
+
+            //Console.WriteLine(voin1.sword);
+            //Console.WriteLine(voin1.armor);
+
+            //Console.WriteLine(voin2.sword);
+            //Console.WriteLine(voin2.armor);
+
+            //voin2.Print();
+
+
+            //Console.WriteLine((int)AgeTermin.Young);    
+
+
+            //LESSON 9
+
+
+            var intro = new IntroStruct();
+            var transaction = new AccountTransact();
+
+            int opt;
+            intro.Intro();
+            intro.Loading();
+
+            Console.Clear();
+
+            do
+            {
+                Console.Write("\n\n\tРазделы меню");
+                Console.Write("\n 1.Создать новый аккаунт");
+                Console.Write("\n 2.Посмотреть информацию об аккаунте");
+                Console.Write("\n 3.Обновить информацию об аккаунте");
+                Console.Write("\n 4.Внести сумму на баланс счета");
+                Console.Write("\n 5.Снять сумму с баланса счета");
+                Console.Write("\n 6.Показать текущий баланс счета");
+                Console.Write("\n 7.Выход из приложения");
+                Console.WriteLine("\n Выберите опцию 1-7: ");
+                opt = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch(opt)
+                {
+                    case (int)Options.New:
+                        {
+                            Console.Clear();
+                            intro.Loading();
+                            Console.Clear();
+                            transaction.CreateAccount();
+                            break;
+                        }
+                    case (int)Options.Show:
+                        {
+                            Console.Clear();
+                            intro.Loading();
+                            Console.Clear();
+                            transaction.ShowAccount();
+                            break;
+                        }
+                    case (int)Options.Modify:
+                        {
+                            Console.Clear();
+                            intro.Loading();
+                            Console.Clear();
+                            Console.Write("Введите ID аккаунта: ");
+                            int id = int.Parse(Console.ReadLine());
+                            transaction.ModifyAccount(id);
+                            break;
+                        }
+                    case (int)Options.Deposit:
+                        {
+                            Console.Clear();
+                            intro.Loading();
+                            Console.Clear();
+                            transaction.MoneyDeposit();
+                            break;
+                        }
+                    case (int)Options.Withdraw:
+                        {
+                            Console.Clear();
+                            intro.Loading();
+                            Console.Clear();
+                            transaction.MoneyWithDraw();
+                            break;
+                        }
+                    case (int)Options.BalanceShow:
+                        {
+                            Console.Clear();
+                            intro.Loading();
+                            Console.Clear();
+                            transaction.BalanceShow();
+                            break;
+                        }
+                    case (int)Options.Exit:
+                        {
+                            Environment.Exit(0);
+                            break;
+                        }
+                }
+
+            } while (opt != (int)Options.Exit);
+
+
+
 
 
         }
