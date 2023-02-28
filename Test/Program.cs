@@ -758,90 +758,198 @@ namespace Test
             //LESSON 9
 
 
-            var intro = new IntroStruct();
-            var transaction = new AccountTransact();
+            //var intro = new IntroStruct();
+            //var transaction = new AccountTransact();
 
-            int opt;
-            intro.Intro();
-            intro.Loading();
+            //int opt;
+            //intro.Intro();
+            //intro.Loading();
 
-            Console.Clear();
+            //Console.Clear();
 
-            do
-            {
-                Console.Write("\n\n\tРазделы меню");
-                Console.Write("\n 1.Создать новый аккаунт");
-                Console.Write("\n 2.Посмотреть информацию об аккаунте");
-                Console.Write("\n 3.Обновить информацию об аккаунте");
-                Console.Write("\n 4.Внести сумму на баланс счета");
-                Console.Write("\n 5.Снять сумму с баланса счета");
-                Console.Write("\n 6.Показать текущий баланс счета");
-                Console.Write("\n 7.Выход из приложения");
-                Console.WriteLine("\n Выберите опцию 1-7: ");
-                opt = int.Parse(Console.ReadLine());
-                Console.Clear();
-                switch(opt)
-                {
-                    case (int)Options.New:
-                        {
-                            Console.Clear();
-                            intro.Loading();
-                            Console.Clear();
-                            transaction.CreateAccount();
-                            break;
-                        }
-                    case (int)Options.Show:
-                        {
-                            Console.Clear();
-                            intro.Loading();
-                            Console.Clear();
-                            transaction.ShowAccount();
-                            break;
-                        }
-                    case (int)Options.Modify:
-                        {
-                            Console.Clear();
-                            intro.Loading();
-                            Console.Clear();
-                            Console.Write("Введите ID аккаунта: ");
-                            int id = int.Parse(Console.ReadLine());
-                            transaction.ModifyAccount(id);
-                            break;
-                        }
-                    case (int)Options.Deposit:
-                        {
-                            Console.Clear();
-                            intro.Loading();
-                            Console.Clear();
-                            transaction.MoneyDeposit();
-                            break;
-                        }
-                    case (int)Options.Withdraw:
-                        {
-                            Console.Clear();
-                            intro.Loading();
-                            Console.Clear();
-                            transaction.MoneyWithDraw();
-                            break;
-                        }
-                    case (int)Options.BalanceShow:
-                        {
-                            Console.Clear();
-                            intro.Loading();
-                            Console.Clear();
-                            transaction.BalanceShow();
-                            break;
-                        }
-                    case (int)Options.Exit:
-                        {
-                            Environment.Exit(0);
-                            break;
-                        }
-                }
+            //do
+            //{
+            //    Console.Write("\n\n\tРазделы меню");
+            //    Console.Write("\n 1.Создать новый аккаунт");
+            //    Console.Write("\n 2.Посмотреть информацию об аккаунте");
+            //    Console.Write("\n 3.Обновить информацию об аккаунте");
+            //    Console.Write("\n 4.Внести сумму на баланс счета");
+            //    Console.Write("\n 5.Снять сумму с баланса счета");
+            //    Console.Write("\n 6.Показать текущий баланс счета");
+            //    Console.Write("\n 7.Выход из приложения");
+            //    Console.WriteLine("\n Выберите опцию 1-7: ");
+            //    opt = int.Parse(Console.ReadLine());
+            //    Console.Clear();
+            //    switch(opt)
+            //    {
+            //        case (int)Options.New:
+            //            {
+            //                Console.Clear();
+            //                intro.Loading();
+            //                Console.Clear();
+            //                transaction.CreateAccount();
+            //                break;
+            //            }
+            //        case (int)Options.Show:
+            //            {
+            //                Console.Clear();
+            //                intro.Loading();
+            //                Console.Clear();
+            //                transaction.ShowAccount();
+            //                break;
+            //            }
+            //        case (int)Options.Modify:
+            //            {
+            //                Console.Clear();
+            //                intro.Loading();
+            //                Console.Clear();
+            //                Console.Write("Введите ID аккаунта: ");
+            //                int id = int.Parse(Console.ReadLine());
+            //                transaction.ModifyAccount(id);
+            //                break;
+            //            }
+            //        case (int)Options.Deposit:
+            //            {
+            //                Console.Clear();
+            //                intro.Loading();
+            //                Console.Clear();
+            //                transaction.MoneyDeposit();
+            //                break;
+            //            }
+            //        case (int)Options.Withdraw:
+            //            {
+            //                Console.Clear();
+            //                intro.Loading();
+            //                Console.Clear();
+            //                transaction.MoneyWithDraw();
+            //                break;
+            //            }
+            //        case (int)Options.BalanceShow:
+            //            {
+            //                Console.Clear();
+            //                intro.Loading();
+            //                Console.Clear();
+            //                transaction.BalanceShow();
+            //                break;
+            //            }
+            //        case (int)Options.Exit:
+            //            {
+            //                Environment.Exit(0);
+            //                break;
+            //            }
+            //    }
 
-            } while (opt != (int)Options.Exit);
+            //} while (opt != (int)Options.Exit);
 
 
+            //LESSON 10 Try/catch
+
+
+            //try
+            //{
+            //    int num = 500;
+            //    int result = num / 0;
+            //    Console.WriteLine($"Result : {result}");
+            //}
+            //catch(DivideByZeroException)
+            //{
+            //    Console.WriteLine("DivideByZeroException appeared");
+            //}
+            //finally 
+            //{
+            //    Console.WriteLine("block finally always works ONCE, may not write there");
+            //}
+            //Console.WriteLine("End of program");
+
+            //try
+            //{
+            //    var num = new int[10];
+            //    num[12] = 12;
+            //    Console.WriteLine($"Result : {num}");
+            //}
+            //catch (IndexOutOfRangeException)
+            //{
+            //    Console.WriteLine("IndexOutOfRangeException appeared");
+            //}
+
+
+            //try
+            //{
+            //    var num = new int[10];
+            //    num[12] = 12;
+            //    Console.WriteLine($"Result : {num}");
+            //}
+            //catch (IndexOutOfRangeException ex)
+            //{
+            //    Console.WriteLine($"IndexOutOfRangeException appeared and text: {ex.Message}");
+            //}
+
+            //int num = 0;
+            //try
+            //{
+            //    int result = 300 / num;
+            //    var arr = new int[10];
+            //    arr[12] = 12;
+            //    Console.WriteLine($"Result : {arr.Length}");
+            //}
+            //catch (DivideByZeroException) when (num == 0) 
+            //{ 
+            //    Console.WriteLine("num не должен быть равен 0");
+            //}
+            //catch (DivideByZeroException ex)
+            //{
+            //    Console.WriteLine($"DivideByZeroException appeared and text: {ex.Message}");
+            //}
+
+
+
+            //try
+            //{
+            //    int num = 500;
+            //    int result = num / 0;
+            //    Console.WriteLine($"Result : {result}");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Трассировка стека: {ex.StackTrace}");
+            //    Console.WriteLine($"Исключение: {ex.Message}");
+            //    Console.WriteLine($"Метод: {ex.TargetSite}");
+            //    Console.WriteLine($"Исключение исключение: {ex.InnerException}");
+            //}
+
+            //try
+            //{
+            //    Console.Write("Write your password: ");
+            //    string password = Console.ReadLine();
+            //    Console.Write("Confirm your password : ");
+            //    string confirmPassword = Console.ReadLine();
+
+            //    if (password.Equals(confirmPassword))
+            //    {
+            //        Console.WriteLine("Password is correct");
+            //    }
+            //    else
+            //    {
+            //        throw new Exception("Wrong password man!");
+            //    }
+            //}
+            //catch (Exception e) 
+            //{ 
+            //    Console.WriteLine($"Ошибка: {e.Message}");
+            //}
+
+            //try
+            //{
+            //    var password = new Password { Value = "lolkek", ConfirmPassword = "lolkek" };
+            //    Console.WriteLine("Password is correct");
+            //}
+            //catch(PasswordException e) 
+            //{
+            //    Console.WriteLine($"Ошибка: {e.Message}");
+            //}
+
+
+            //LESSON 11
 
 
 
